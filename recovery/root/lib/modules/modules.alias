@@ -73,10 +73,13 @@ alias of:N*T*Cmediatek,mt6375-battery_oc_throttling mtk_battery_oc_throttling
 alias of:N*T*Cmediatek,mt6375-battery_oc_throttlingC* mtk_battery_oc_throttling
 alias of:N*T*Crichtek,rt5133 rt5133_regulator
 alias of:N*T*Crichtek,rt5133C* rt5133_regulator
+alias i2c:sc8551_i2c0 sc8551
 alias i2c:sc8551_i2c7 sc8551
 alias i2c:sc8551_i2c9 sc8551
 alias i2c:sc8551_master sc8551
 alias i2c:sc8551_slave sc8551
+alias of:N*T*Csc8551_i2c0 sc8551
+alias of:N*T*Csc8551_i2c0C* sc8551
 alias of:N*T*Csc8551_i2c7 sc8551
 alias of:N*T*Csc8551_i2c7C* sc8551
 alias of:N*T*Csc8551_i2c9 sc8551

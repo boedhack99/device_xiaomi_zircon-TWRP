@@ -64,7 +64,6 @@ cmdq-platform-mt6895.ko
 mtk-mml-mt6895.ko
 mtk-mml.ko
 mdp_drv_mt6895.ko
-hwconf_manager.ko
 cmdq_helper_inf.ko
 mtk_panel_ext.ko
 mediatek-drm-gateic.ko
@@ -249,7 +248,6 @@ cmdq-platform-mt6895.ko
 mtk-mml-mt6895.ko
 mtk-mml.ko
 mdp_drv_mt6895.ko
-hwconf_manager.ko
 cmdq_helper_inf.ko
 mtk_panel_ext.ko
 mediatek-drm-gateic.ko
