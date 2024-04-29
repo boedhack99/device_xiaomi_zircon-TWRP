@@ -30,14 +30,14 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
     export FOX_VERSION=$(date +%y.%m.%d)
     export ALLOW_MISSING_DEPENDENCIES=true
     export TARGET_DEVICE_ALT="rubens"
-    export OF_VIRTUAL_AB_DEVICE=1
+    export FOX_VIRTUAL_AB_DEVICE=1
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export OF_MAINTAINER="D8100-9000-TWRP-Device-Tree Team"
 
     # Magiskboot
     export OF_USE_MAGISKBOOT=1
     export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-    export OF_PATCH_VBMETA_FLAG=1
+    export FOX_PATCH_VBMETA_FLAG=1
 
     # Magisk
     export FOX_USE_SPECIFIC_MAGISK_ZIP="$FOX_MANIFEST_ROOT/device/xiaomi/rubens/Magisk/Magisk-v25.2.zip"
@@ -82,7 +82,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
     # Others
     export OF_USE_GREEN_LED=0
     export OF_FLASHLIGHT_ENABLE=0
-    
+    export TW_MAX_BRIGHTNESS=1200
 
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
         export | grep "FOX" >>$FOX_BUILD_LOG_FILE
