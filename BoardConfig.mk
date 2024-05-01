@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/rubens
+DEVICE_PATH := device/xiaomi/zircon
 
 # Architecture
 TARGET_ARCH := arm64
@@ -35,10 +35,10 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Assertation
-TARGET_OTA_ASSERT_DEVICE := rubens
+TARGET_OTA_ASSERT_DEVICE := zircon
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := rubens
+TARGET_BOOTLOADER_BOARD_NAME := zircon
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
@@ -108,7 +108,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Platform
-TARGET_BOARD_PLATFORM := mt6895
+TARGET_BOARD_PLATFORM := mt6886
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -141,8 +141,8 @@ BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT :=
 BOARD_AVB_ENABLE := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_rubens
-TARGET_RECOVERY_DEVICE_MODULES := libinit_rubens
+TARGET_INIT_VENDOR_LIB := libinit_zircon
+TARGET_RECOVERY_DEVICE_MODULES := libinit_zircon
 
 # TWRP Configurations
 TW_FRAMERATE := 60

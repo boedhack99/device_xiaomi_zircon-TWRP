@@ -19,6 +19,7 @@
 /dev/block/by-name/proinfo   0660    root    system
 /dev/block/by-name/nvram     0660    root    system
 /dev/block/by-name/para      0660    root    system
+/dev/block/by-name/logo      0660    root    system
 /dev/block/by-name/logo_a    0660    root    system
 /dev/block/by-name/logo_b    0660    root    system
 /dev/block/by-name/frp       0660    root    system
@@ -39,7 +40,8 @@
 /dev/fw_log_wifimcu       0660   system     system
 /dev/fw_log_btmcu         0660   system     system
 /dev/conninfra_dev        0660   system     system
-/dev/conn_scp_dev         0660   system     system
+/dev/conn_scp             0660   system     system
+/dev/conn_pwr_dev         0660   system     system
 
 # BT
 /dev/stpbt                0660   bluetooth  bluetooth
@@ -60,10 +62,13 @@
 # WIFI
 /dev/wmtWifi              0660   wifi     wifi
 /dev/fw_log_wifi          0660   wifi     wifi
-/dev/fw_log_ics	          0660   wifi     wifi
+/dev/fw_log_ics           0660   wifi     wifi
 
 # FMRadio
 /dev/fm                   0660   media     media
+
+# ConnFem
+/dev/connfem              0660   system     system
 
 # NFC
 /dev/st21nfc              0660   nfc        radio
@@ -81,11 +86,11 @@
 
 # TrustonicTEE driver
 /dev/mobicore             0600   system     system
-/dev/mobicore-user        0666   system     system
-/dev/t-base-tui           0666   system     system
+/dev/mobicore-user        0660   system     system
+/dev/t-base-tui           0660   system     system
 
 # teeperf driver
-/dev/teeperf              0666   system     system
+/dev/teeperf              0660   system     system
 
 #v4l2 device
 /dev/video*      0660 camera system
@@ -103,6 +108,14 @@
 
 # MDDP node
 /dev/mddp                 0660   system     system
+
+# cpu hotplug
+/sys/devices/system/cpu/cpu* cpufreq/sugov_ext/down_rate_limit_us 0664 system system
+/sys/devices/system/cpu/cpu* cpufreq/sugov_ext/up_rate_limit_us 0664 system system
+
+#elliptic sensor
+/dev/elliptic0            0644   system     system
+/dev/elliptic1            0644   system     system
 
 # add the read write right of ttyUSB*
 /dev/bus/usb/*     	  0660   root       usb
@@ -196,13 +209,11 @@
 #CCU
 /dev/ccu*      0660 system camera
 
-# xiaomi display feature
-subsystem mi_display
-    devname uevent_devpath
-    dirname /dev/mi_display
+#hbt
+/dev/hbt       0600 root   root
 
-/dev/mi_display/*         0660   system       graphics
+#sensor
+/dev/hf_manager        0660    system    system
 
-#elliptic sensor
-/dev/elliptic0            0644   system     system
-/dev/elliptic1            0644   system     system
+#dynamic sensor
+/dev/hidraw*   0660 system system

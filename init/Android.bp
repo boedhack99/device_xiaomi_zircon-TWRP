@@ -1,5 +1,5 @@
 cc_library_static {
-    name: "libinit_rubens",
+    name: "libinit_zircon",
     header_libs: [
         "libbase_headers",
     ],
@@ -9,6 +9,6 @@ cc_library_static {
     static_libs: [
         "libbase",
     ],
-    srcs: ["init_rubens.cpp"],
+    srcs: ["init_zircon.cpp"],
     recovery_available: true,
 }

@@ -64,17 +64,17 @@ jobs:
     - name: Clone Device Tree
       run: |
         cd ${GITHUB_WORKSPACE}/workspace
-        git clone https://github.com/YuKongA/device_xiaomi_rubens-TWRP.git -b twrp-12.1_A13 ./device/xiaomi/rubens
+        git clone https://github.com/boedhack99/device_xiaomi_zircon-TWRP.git -b twrp-12.1 ./device/xiaomi/zircon
 
     - name: Building
       run: |
         cd ${GITHUB_WORKSPACE}/workspace
         source build/envsetup.sh
-        lunch twrp_rubens-eng
+        lunch twrp_zircon-eng
         mka vendorbootimage -j$(nproc --all)
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: rubens_twrp-13
-        path: workspace/out/target/product/rubens/vendor_boot.img
+        name: zircon_twrp-13
+        path: workspace/out/target/product/zircon/vendor_boot.img
