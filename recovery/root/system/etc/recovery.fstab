@@ -15,6 +15,7 @@ system_ext                                             /system_ext            er
 system_ext                                             /system_ext            ext4    ro                                                  wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
 odm                                                    /odm                   erofs   ro                                                  wait,slotselect,avb,logical,first_stage_mount
 odm                                                    /odm                   ext4    ro                                                  wait,slotselect,avb,logical,first_stage_mount
+system_dlkm                                            /system_dlkm           erofs   ro                                                  wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
 vendor_dlkm                                            /vendor_dlkm           erofs   ro                                                  wait,slotselect,avb,logical,first_stage_mount
 odm_dlkm                                               /odm_dlkm              erofs   ro                                                  wait,slotselect,avb,logical,first_stage_mount
 /dev/block/by-name/metadata                            /metadata              ext4    noatime,nosuid,nodev,discard                        wait,check,formattable,first_stage_mount
