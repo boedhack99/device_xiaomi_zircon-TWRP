@@ -78,8 +78,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
+    android.hardware.health@1.0 \
+    android.hardware.health@2.0
 
 # Keymaster
 PRODUCT_PACKAGES += \
