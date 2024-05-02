@@ -26,7 +26,7 @@
         device/xiaomi/missi/device_framework_compatibility_matrix/micharge/vendor_framework_compatibility_matrix.xml
         vendor/xiaomi/proprietary/misys/vendor_framework_compatibility_matrix.xml
 -->
-<compatibility-matrix version="7.0" type="framework">
+<compatibility-matrix version="4.0" type="framework">
     <hal format="aidl" optional="true">
         <name>android.hardware.biometrics.face</name>
         <version>2</version>
