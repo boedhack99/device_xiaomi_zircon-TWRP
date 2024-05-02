@@ -87,6 +87,7 @@ service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibrat
     class hal
     user system
     group system input
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     seclabel u:r:recovery:s0
 
 service vendor.health-default /vendor/bin/hw/android.hardware.health-service.example_recovery
