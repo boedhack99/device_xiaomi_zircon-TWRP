@@ -106,9 +106,25 @@ service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-ser
     disabled
     seclabel u:r:recovery:s0
 
+service set_permissive /system/bin/set_permissive.sh
+    user root
+    group root
+    disabled
+    oneshot 
+    seclabel u:r:recovery:s0
+    
+ service overrideprops /system/bin/overrideprops.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service vendor.keymint-mitee /vendor/bin/hw/android.hardware.security.keymint@2.0-service.mitee
     class early_hal
-    user nobody
+    user root
+    group root drmrpc
+    disabled
     seclabel u:r:recovery:s0
 
 on property:crypto.ready=1
@@ -147,4 +163,6 @@ on property:twrp.modules.loaded=true
 
 on boot
     start vendor.health-default
+    start set_permissive
+    start overrideprops
     setprop sys.usb.config adb
