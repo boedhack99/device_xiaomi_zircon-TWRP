@@ -101,40 +101,51 @@ service set_permissive /system/bin/set_permissive.sh
     seclabel u:r:recovery:s0
 
 service vendor.keymint-mitee /vendor/bin/hw/android.hardware.security.keymint@2.0-service.mitee
-    class early_hal
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.identity-mitee /vendor/bin/hw/android.hardware.identity-service.mitee@4.0
     user root
     group root drmrpc
     disabled
     seclabel u:r:recovery:s0
 
 on property:crypto.ready=1
+    start vendor.identity-mitee
     start vendor.keymint-mitee
 
 on property:hwservicemanager.ready=true
+    start vendor.identity-mitee
     start vendor.keymint-mitee
     start vendor.gatekeeper-1-0
 
 on property:ro.crypto.state=unsupported
     stop miteelog
     stop tee-supplicant
+    stop vendor.identity-mitee
     stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
 
 on property:ro.crypto.state=unencrypted
     stop miteelog
     stop tee-supplicant
+    stop vendor.identity-mitee
     stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
 
 on property:twrp.decrypt.done=true
     stop miteelog
     stop tee-supplicant
+    stop vendor.identity-mitee
     stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
 
 on property:crypto.ready=0
     stop miteelog
     stop tee-supplicant
+    stop vendor.identity-mitee
     stop vendor.keymint-mitee
     stop vendor.gatekeeper-1-0
 
