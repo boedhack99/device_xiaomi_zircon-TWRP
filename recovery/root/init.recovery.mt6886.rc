@@ -162,6 +162,6 @@ on property:twrp.modules.loaded=true
 
 on boot
     start vendor.health-default
-    start set_permissive
-    start overrideprops
+#    start set_permissive
+#    start overrideprops
     setprop sys.usb.config adb
