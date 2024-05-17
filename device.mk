@@ -81,6 +81,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0 \
     android.hardware.health@2.0
 
+# HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1
