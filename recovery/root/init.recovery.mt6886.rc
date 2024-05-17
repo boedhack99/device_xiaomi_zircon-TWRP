@@ -1,5 +1,4 @@
-import /miteelog.rc
-import /tee-supplicant.rc
+import /init.mitee.rc
 
 on init
     setprop sys.usb.configfs 1
