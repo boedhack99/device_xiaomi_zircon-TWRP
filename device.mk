@@ -81,6 +81,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4
 
+# Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common@1.0
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0 \
