@@ -16,9 +16,6 @@ on early-fs
     start vold
 
 on late-fs
-    # Wait for keymaster
-    exec_start wait_for_keymaster
-
     # Mount RW partitions which need run fsck
     mount_all /first_stage_ramdisk/fstab.mt6886 --late
 
@@ -84,13 +81,6 @@ service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     group root system
     disabled
     oneshot
-    seclabel u:r:recovery:s0
-
-service wait_for_keymaster /system/bin/wait_for_keymaster
-    user root
-    group root system
-    priority -20
-    ioprio rt 0
     seclabel u:r:recovery:s0
 
 service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
